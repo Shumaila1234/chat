@@ -2,16 +2,26 @@ import 'package:chat/screens/login/login.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  // ensure initialisation
-  FirebaseApp firebaseApp = await Firebase.initializeApp();
+// Future<void> main() async {
+//   WidgetsFlutterBinding.ensureInitialized();
+//   // ensure initialisation
+//   FirebaseApp firebaseApp = await Firebase.initializeApp();
+//   runApp(MaterialApp(
+//     title: 'Flutter Demo',
+//     theme: ThemeData(
+//       primarySwatch: Colors.blue,
+//     ),
+//     home: LoginBody(),
+//   ));
+// }
+
+main() {
   runApp(MaterialApp(
     title: 'Flutter Demo',
     theme: ThemeData(
       primarySwatch: Colors.blue,
     ),
-    home: const LoginBody(),
+    home: LoginBody(),
   ));
 }
 

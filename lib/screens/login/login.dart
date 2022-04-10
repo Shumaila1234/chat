@@ -42,11 +42,11 @@ class _LoginBodyState extends State<LoginBody> {
   bool _isProcessing = false;
   late DatabaseReference _dbref;
 
-  @override
-  void initState() {
-    super.initState();
-    _dbref = FirebaseDatabase.instance.ref();
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   _dbref = FirebaseDatabase.instance.ref();
+  // }
 
   var getemail = "";
 
