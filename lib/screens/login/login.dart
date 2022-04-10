@@ -1,6 +1,7 @@
 import 'package:chat/screens/signup/signup.dart';
 import 'package:chat/widgets/dialogues.dart';
 import 'package:country_picker/country_picker.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
@@ -39,23 +40,28 @@ class _LoginBodyState extends State<LoginBody> {
   var finalPhoneNumber = "";
   PhoneNumber number = PhoneNumber();
   bool _isProcessing = false;
+  late DatabaseReference _dbref;
+
+  @override
+  void initState() {
+    super.initState();
+    _dbref = FirebaseDatabase.instance.ref();
+  }
+
+  var getemail = "";
 
   void togglePasswordVisibility() =>
       setState(() => _passwordVisibilty = !_passwordVisibilty);
 
   _getLogin() {
-    // setState(() {
-    //   _isLoading = true;
-    // });
-    // Future.delayed(const Duration(seconds: 4), () {
-    //   setState(() {
-    //     _isLoading = false;
-    //   });
-
-    //   // obj.dbSave('INSERT INTO login(id, username, token) VALUES (1, "", "")');
-    //   Navigator.push(
-    //       context, MaterialPageRoute(builder: (context) => Navigation()));
-    // });
+    _dbref.child("jobprofile").child("website2").once().then((event) {
+      final dataSnapshot = event.snapshot;
+      if (dataSnapshot.value != null) {
+        setState(() {
+          getemail = dataSnapshot.value.toString();
+        });
+      }
+    });
   }
 
   @override
