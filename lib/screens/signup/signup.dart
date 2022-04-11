@@ -194,29 +194,8 @@ class _SignupBodyState extends State<SignupBody> {
                                   fontSize: 20, fontFamily: "Poppins"),
                             ),
                       MediaQuery.of(context).size.width * 0.9,
-                      MediaQuery.of(context).size.height * 0.07, () async {
-                    //   setState(() {
-                    //     _isLoading = true;
-                    //   });
-
-                    //   if (_registerFormKey.currentState!.validate()) {
-                    //     User? user = await FireAuth.registerUsingEmailPassword(
-                    //       name: fullNameController.text,
-                    //       email: emailController.text,
-                    //       password: passwordController.text,
-                    //     );
-
-                    //     setState(() {
-                    //       _isLoading = false;
-                    //     });
-
-                    //     if (user != null) {
-                    //       Navigator.of(context).pushAndRemoveUntil(
-                    //         MaterialPageRoute(builder: (context) => Home()),
-                    //         ModalRoute.withName('/'),
-                    //       );
-                    //     }
-                    //   }
+                      MediaQuery.of(context).size.height * 0.07, () {
+                    _getRegister();
                   }),
 
                   const SizedBox10(),

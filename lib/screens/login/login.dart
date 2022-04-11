@@ -1,20 +1,13 @@
 import 'package:chat/screens/signup/signup.dart';
-import 'package:chat/widgets/dialogues.dart';
-import 'package:country_picker/country_picker.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
-
 import '../../shared/app-theme.dart';
 import '../../shared/sizedbox.dart';
 import '../../widgets/button.dart';
-import '../../widgets/country-picker.dart';
 import '../../widgets/passwordTextField.dart';
-import '../../widgets/phone-number.dart';
 import '../../widgets/text.dart';
 import '../../widgets/textfield-placeholder.dart';
-import '../login/login.dart';
 
 class LoginBody extends StatefulWidget {
   const LoginBody({Key? key}) : super(key: key);
@@ -28,25 +21,10 @@ class _LoginBodyState extends State<LoginBody> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  var userData;
-  var fresult;
-  var fname = "name";
-  var femail = "abc@gmail.com";
   bool _isLoading = false;
   bool _passwordVisibilty = false;
-  var result;
-  var name = "name";
-  var email = "abc@gmail.com";
-  var finalPhoneNumber = "";
   PhoneNumber number = PhoneNumber();
-  bool _isProcessing = false;
   late DatabaseReference _dbref;
-
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   _dbref = FirebaseDatabase.instance.ref();
-  // }
 
   var getemail = "";
 
