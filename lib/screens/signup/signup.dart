@@ -58,7 +58,7 @@ class _SignupBodyState extends State<SignupBody> {
       setState(() => _passwordVisibilty = !_passwordVisibilty);
 
   _getRegister() {
-    _dbref.child("jobprofile").set(
+    _dbref.child("register").set(
         {'email': emailController.text, "password": passwordController.text});
   }
 

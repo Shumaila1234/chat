@@ -27,16 +27,18 @@ class _LoginBodyState extends State<LoginBody> {
   late DatabaseReference _dbref;
 
   var getemail = "";
+  var getpassword = "";
 
   void togglePasswordVisibility() =>
       setState(() => _passwordVisibilty = !_passwordVisibilty);
 
   _getLogin() {
-    _dbref.child("jobprofile").child("website2").once().then((event) {
+    _dbref.child("register").child("email").once().then((event) {
       final dataSnapshot = event.snapshot;
       if (dataSnapshot.value != null) {
         setState(() {
           getemail = dataSnapshot.value.toString();
+          // getpassword = dataSnapshot.value.toString();
         });
       }
     });
