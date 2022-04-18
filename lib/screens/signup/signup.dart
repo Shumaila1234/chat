@@ -34,12 +34,12 @@ class _SignupBodyState extends State<SignupBody> {
   TextEditingController professionController = TextEditingController();
   TextEditingController villageController = TextEditingController();
 
-  late DatabaseReference _dbref;
+  // late DatabaseReference _dbref;
 
   @override
   void initState() {
-    super.initState();
-    _dbref = FirebaseDatabase.instance.ref();
+    // super.initState();
+    // _dbref = FirebaseDatabase.instance.ref();
   }
 
   var myFormat = DateFormat('dd-MM-yyyy');
@@ -58,14 +58,15 @@ class _SignupBodyState extends State<SignupBody> {
       setState(() => _passwordVisibilty = !_passwordVisibilty);
 
   _getRegister() {
-    _dbref.child("register").set(
-        {'email': emailController.text, "password": passwordController.text});
+    // _dbref.child("register").set(
+    //     {'email': emailController.text, "password": passwordController.text});
   }
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: SingleChildScrollView(
+    return Scaffold(
+      appBar: AppBar(),
+      body: SingleChildScrollView(
         child: Center(
           child: Padding(
             padding: const EdgeInsets.only(top: 40, left: 20, right: 20),

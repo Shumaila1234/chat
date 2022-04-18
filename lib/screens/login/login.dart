@@ -62,9 +62,9 @@ class _LoginBodyState extends State<LoginBody> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         "Email",
-                        style: const TextStyle(
+                        style: TextStyle(
                             fontSize: 17,
                             color: Colors.black,
                             fontWeight: FontWeight.w500,
@@ -72,15 +72,23 @@ class _LoginBodyState extends State<LoginBody> {
                       ),
                       customTextFieldWithPlaceholder(
                           context, "", emailController, TextInputType.text),
+                      const SizedBox10(),
+                      const Text(
+                        "Password",
+                        style: TextStyle(
+                            fontSize: 17,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: "Poppins"),
+                      ),
+                      customPasswordTextfield(
+                          context, passwordController, '', _passwordVisibilty,
+                          () {
+                        togglePasswordVisibility();
+                      }),
                     ],
                   ),
                 ),
-                const SizedBox10(),
-                customPasswordTextfield(
-                    context, passwordController, 'Password', _passwordVisibilty,
-                    () {
-                  togglePasswordVisibility();
-                }),
                 const SizedBox10(),
                 InkWell(
                   onTap: () {},

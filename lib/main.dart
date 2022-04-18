@@ -1,4 +1,5 @@
 import 'package:chat/screens/login/login.dart';
+import 'package:chat/screens/signup/signup.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -7,22 +8,14 @@ import 'package:flutter/material.dart';
 //   // ensure initialisation
 //   FirebaseApp firebaseApp = await Firebase.initializeApp();
 //   runApp(MaterialApp(
-//     title: 'Flutter Demo',
-//     theme: ThemeData(
-//       primarySwatch: Colors.blue,
-//     ),
-//     home: LoginBody(),
+//     home: SignupBody(),
 //   ));
 // }
 
 main() {
-  runApp(MaterialApp(
-    title: 'Flutter Demo',
-    theme: ThemeData(
-      primarySwatch: Colors.blue,
-    ),
-    home: LoginBody(),
-  ));
+  runApp(
+    MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -32,11 +25,23 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const LoginBody(),
+      home: const SignupBody(),
+    );
+  }
+}
+
+class ab extends StatelessWidget {
+  const ab({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Text("data"),
     );
   }
 }
